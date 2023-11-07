@@ -1,0 +1,28 @@
+services: 
+
+  hotels:
+    image: samyzistec/hotels:latest
+    mem_limit: 800m
+    ports:
+      - "8080:8080"
+    networks:
+      - samy-network
+    
+  rooms:
+    image: samyzistec/rooms:latest
+    mem_limit: 800m
+    ports:
+      - "8081:8081"
+    networks:
+      - samy-network
+    
+  reservations:
+    image: samyzistec/reservations:latest
+    mem_limit: 800m
+    ports:
+      - "8082:8082"
+    networks:
+      - samy-network
+
+networks:
+  samy-network:
